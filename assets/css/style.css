@@ -111,14 +111,13 @@ img, .img-protect{
 /* ---------- Hero (maroon stage + watermark) ---------- */
 .hero--stage{
   background:var(--color-wine-maroon);color:var(--color-cream-paper);
-  border-bottom:0;padding:96px 0 80px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border-bottom:0;padding:96px 0 80px;text-align:center;
 }
 .hero--stage h1{color:var(--color-cream-paper);position:relative;z-index:2;}
 .hero--stage .sub{color:var(--accent);position:relative;z-index:2;}
 .hero--stage p{color:var(--color-soft-pink);position:relative;z-index:2;}
 .hero-watermark{
-  position:static;transform:none;margin-top:8px;
+  display:block;width:100%;text-align:center;margin-top:8px;
   font-family:var(--font-serif);font-weight:400;
   font-size:clamp(7rem,26vw,16rem);line-height:.85;white-space:nowrap;
   color:var(--accent);opacity:.16;z-index:1;pointer-events:none;letter-spacing:-.02em;
