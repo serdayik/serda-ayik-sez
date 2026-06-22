@@ -48,4 +48,39 @@
   // Yıl bilgisini footer'a yaz
   var yearEl = document.querySelector("[data-year]");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------- Carousel (oklu galeri) ---------- */
+  function initCarousel(root) {
+    var track = root.querySelector(".carousel-track");
+    var slides = root.querySelectorAll(".carousel-slide");
+    var dots = root.querySelectorAll("[data-dot]");
+    var prev = root.querySelector(".carousel-prev");
+    var next = root.querySelector(".carousel-next");
+    if (!track || slides.length === 0) return;
+    var index = 0;
+    var count = slides.length;
+
+    function update() {
+      track.style.transform = "translateX(" + (-index * 100) + "%)";
+      for (var d = 0; d < dots.length; d++) {
+        dots[d].classList.toggle("active", d === index);
+      }
+    }
+    function go(step) {
+      index = (index + step + count) % count;
+      update();
+    }
+
+    if (prev) prev.addEventListener("click", function () { go(-1); });
+    if (next) next.addEventListener("click", function () { go(1); });
+    for (var i = 0; i < dots.length; i++) {
+      (function (n) {
+        dots[n].addEventListener("click", function () { index = n; update(); });
+      })(i);
+    }
+    update();
+  }
+
+  var carousels = document.querySelectorAll("[data-carousel]");
+  for (var c = 0; c < carousels.length; c++) initCarousel(carousels[c]);
 })();
