@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Instrument+Serif&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=5">
+<link rel="stylesheet" href="assets/css/style.css?v=6">
 </head>
 <body>
 
@@ -97,9 +97,14 @@
 
       <!-- File -->
       <article class="product">
-        <div class="gallery">
-          <div class="media"><img src="assets/img/atolye/file-1.jpg" alt="File çanta"></div>
-          <div class="media"><img src="assets/img/atolye/file-2.jpg" alt="File çanta detay"></div>
+        <div class="carousel" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide"><div class="media"><img src="assets/img/atolye/file-1.jpg" alt="File çanta"></div></div>
+            <div class="carousel-slide"><div class="media"><img src="assets/img/atolye/file-2.jpg" alt="File çanta detay"></div></div>
+          </div>
+          <button class="carousel-btn carousel-prev" type="button" aria-label="Önceki görsel">‹</button>
+          <button class="carousel-btn carousel-next" type="button" aria-label="Sonraki görsel">›</button>
+          <div class="carousel-dots"><span class="dot" data-dot></span><span class="dot" data-dot></span></div>
         </div>
         <div>
           <h2>File</h2>
@@ -136,6 +141,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=5"></script>
+<script src="assets/js/main.js?v=6"></script>
 </body>
 </html>
