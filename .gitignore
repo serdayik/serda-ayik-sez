@@ -1,0 +1,32 @@
+# Geçici / kaynak dosyalar — siteye dahil edilmez
+/_extracted/
+
+# Orijinal Word belgeleri (içerikleri sayfalara gömüldü)
+*.docx
+
+# Orijinal tam boyutlu görseller (yalnızca kök dizindeki orijinaller).
+# Sadece assets/img içindeki küçültülmüş kopyalar yayınlanır — bu, görsel
+# korumasını destekler. Yol başındaki "/" eşleşmeyi köke sabitler, böylece
+# assets/img altındaki kopyalar etkilenmez.
+/profil foto.jpeg
+/Bambu.jpg
+/Avangard.jpg
+/Avanagard.jpg
+/Bohem.jpg
+/Minimalist.jpg
+/File 1.jpg
+/File 2.jpg
+/yazar masası bir.jpg
+/yazar masası iki.jpg
+/yazar masası üç.jpg
+/yazar masası altı.jpg
+/yazar masası yedi.jpg
+/yazar masası sekiz.jpg
+/yazar masası yedek bir.jpg
+/yazar masası yedek iki.png
+/yazı masası dört.jpg
+/yazı masası beş.jpg
+
+# Sistem
+Thumbs.db
+.DS_Store
