@@ -111,7 +111,11 @@ img, .img-protect{
 /* ---------- Hero (maroon stage + watermark) ---------- */
 .hero--stage{
   background:var(--color-wine-maroon);color:var(--color-cream-paper);
-  border-bottom:0;padding:96px 0 80px;text-align:center;
+  border-bottom:0;text-align:center;
+  padding:96px 0 80px;
+  /* Dikey kaydırma çubuğu kaynaklı kaymayı dengele: içeriği tam pencere ortasına hizala.
+     (100vw - 100%) = kaydırma çubuğu genişliği; çubuk yokken 0 olur (mobil overlay). */
+  padding-left:calc(100vw - 100%);
 }
 .hero--stage h1{color:var(--color-cream-paper);position:relative;z-index:2;}
 .hero--stage .sub{color:var(--accent);position:relative;z-index:2;}
