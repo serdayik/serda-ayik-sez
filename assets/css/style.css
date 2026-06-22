@@ -1,39 +1,55 @@
 /* ===========================================================
    Serda Ayık Sez — kişisel site
-   Sade & minimal tema
+   Tema: "Evermade" — Editorial punk on cream paper
+   Krem kâğıt + şarap bordo + hot pink · gölgesiz, çerçeve tabanlı
    =========================================================== */
 
 :root{
-  --bg:#ffffff;
-  --bg-soft:#f7f6f3;
-  --ink:#1d1c1a;
-  --muted:#6c6862;
-  --line:#e8e4dd;
-  --accent:#b06a4f;        /* sıcak toprak tonu, az kullanılır */
-  --accent-dark:#8f5440;
-  --max:1080px;
-  --radius:14px;
-  --shadow:0 1px 2px rgba(0,0,0,.04), 0 8px 30px rgba(0,0,0,.05);
-  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Renkler */
+  --color-wine-maroon:#2d070b;
+  --color-hot-pink:#ff0389;
+  --color-cream-paper:#fef0e6;
+  --color-blush-card:#ffdce2;
+  --color-soft-pink:#ffc7de;
+  --color-pure-black:#000000;
+
+  /* Roller */
+  --bg:var(--color-cream-paper);
+  --ink:var(--color-wine-maroon);
+  --accent:var(--color-hot-pink);
+  --line:rgba(45,7,11,.16);
+
+  /* Tipografi */
+  --font-serif:'Instrument Serif', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono:'DM Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans:'Manrope', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Yerleşim */
+  --max:1200px;
+  --radius-card:8px;
+  --radius-pill:9999px;
 }
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{
   margin:0;
-  font-family:var(--font);
+  font-family:var(--font-sans);
   color:var(--ink);
   background:var(--bg);
-  line-height:1.7;
-  font-size:17px;
+  line-height:1.4;
+  font-size:18px;
+  letter-spacing:-.18px;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
 img{max-width:100%;display:block;}
 a{color:var(--accent);text-decoration:none;}
-a:hover{color:var(--accent-dark);}
+a:hover{color:var(--accent);}
 
-.container{max-width:var(--max);margin:0 auto;padding:0 22px;}
+h1,h2,h3{font-family:var(--font-serif);font-weight:400;line-height:1.1;letter-spacing:-.01em;}
+
+.container{max-width:var(--max);margin:0 auto;padding:0 24px;}
 .narrow{max-width:720px;}
 
 /* ---------- Görsel indirme koruması ---------- */
@@ -43,187 +59,209 @@ img, .img-protect{
   -webkit-touch-callout:none;
   pointer-events:none;
 }
-/* overlay ile sarılmış görseller */
-.media{position:relative;overflow:hidden;}
+.media{position:relative;overflow:hidden;background:var(--color-blush-card);}
 .media::after{
   content:"";position:absolute;inset:0;z-index:2;
   background:transparent;pointer-events:auto;
 }
 
+/* ---------- Mono etiketler / eyebrow ---------- */
+.eyebrow,.sub,.card-meta,.nav-links a,.btn,.badge,.back-link,.cat-card .count,.footer-note,.socials{
+  font-family:var(--font-mono);
+  font-feature-settings:"ss01" on;
+}
+.eyebrow,.sub,.card-meta{
+  font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 14px;
+}
+.eyebrow::before,.sub::before{content:"• ";}
+
 /* ---------- Header / Nav ---------- */
 .site-header{
   position:sticky;top:0;z-index:50;
-  background:rgba(255,255,255,.88);
-  backdrop-filter:saturate(180%) blur(10px);
+  background:rgba(254,240,230,.9);
+  backdrop-filter:saturate(180%) blur(8px);
   border-bottom:1px solid var(--line);
 }
-.nav{
-  display:flex;align-items:center;justify-content:space-between;
-  height:64px;
-}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;}
 .brand{
-  font-weight:700;letter-spacing:.02em;font-size:1.12rem;color:var(--ink);
+  font-family:var(--font-serif);font-weight:400;font-size:1.6rem;letter-spacing:-.01em;
+  color:var(--ink);line-height:1;
 }
 .brand span{color:var(--accent);}
 .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;}
 .nav-links a{
-  color:var(--ink);font-size:.95rem;font-weight:500;
-  padding:6px 0;border-bottom:2px solid transparent;
+  color:var(--ink);font-size:12px;font-weight:400;letter-spacing:.04em;text-transform:uppercase;
+  padding:4px 0;border-bottom:1px solid transparent;transition:.18s;
 }
 .nav-links a:hover{color:var(--accent);}
 .nav-links a.active{border-bottom-color:var(--accent);color:var(--accent);}
 .nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px;}
 .nav-toggle span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.25s;}
 
-/* ---------- Hero ---------- */
+/* ---------- Hero (krem editoryal) ---------- */
 .hero{
-  padding:84px 0 64px;text-align:center;
-  background:linear-gradient(180deg,var(--bg-soft),var(--bg));
+  position:relative;padding:104px 0 88px;text-align:center;overflow:hidden;
   border-bottom:1px solid var(--line);
 }
-.hero h1{font-size:2.6rem;line-height:1.15;margin:0 0 14px;letter-spacing:-.01em;}
-.hero p{font-size:1.18rem;color:var(--muted);max-width:620px;margin:0 auto;}
-.hero .sub{font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;font-weight:600;}
+.hero h1{font-size:clamp(2.4rem,6vw,3rem);margin:0 0 18px;}
+.hero p{font-family:var(--font-sans);font-size:1.22rem;line-height:1.4;color:var(--ink);max-width:640px;margin:0 auto;}
+.hero p.sub{font-family:var(--font-mono);font-size:11px;font-weight:500;line-height:1.25;letter-spacing:.04em;text-transform:uppercase;max-width:none;margin:0 0 16px;}
 
-/* ---------- Sections ---------- */
-.section{padding:64px 0;}
+/* ---------- Hero (maroon stage + watermark) ---------- */
+.hero--stage{
+  background:var(--color-wine-maroon);color:var(--color-cream-paper);
+  border-bottom:0;padding:128px 0 116px;
+}
+.hero--stage h1{color:var(--color-cream-paper);position:relative;z-index:2;}
+.hero--stage .sub{color:var(--accent);position:relative;z-index:2;}
+.hero--stage p{color:var(--color-soft-pink);position:relative;z-index:2;}
+.hero-watermark{
+  position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);
+  font-family:var(--font-serif);font-weight:400;
+  font-size:clamp(7rem,26vw,16rem);line-height:1;white-space:nowrap;
+  color:var(--accent);opacity:.16;z-index:1;pointer-events:none;letter-spacing:-.02em;
+}
+
+/* ---------- Bölümler ---------- */
+.section{padding:96px 0;}
 .section + .section{border-top:1px solid var(--line);}
-.section-title{font-size:1.7rem;margin:0 0 8px;letter-spacing:-.01em;}
-.section-intro{color:var(--muted);margin:0 0 36px;max-width:640px;}
-.eyebrow{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 10px;}
+.section-title{font-size:2.4rem;margin:0 0 14px;}
+.section-intro{font-family:var(--font-sans);color:var(--ink);margin:0 0 40px;max-width:660px;font-size:1.1rem;}
 
-h1,h2,h3{line-height:1.25;}
-
-/* ---------- Grid / cards ---------- */
-.grid{display:grid;gap:30px;}
+/* ---------- Grid / kartlar ---------- */
+.grid{display:grid;gap:32px;}
 .grid-2{grid-template-columns:repeat(2,1fr);}
 .grid-3{grid-template-columns:repeat(3,1fr);}
 
 .card{
-  background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
-  overflow:hidden;transition:transform .2s ease, box-shadow .2s ease;
+  background:transparent;border:1px solid var(--line);border-radius:var(--radius-card);
+  overflow:hidden;transition:border-color .2s ease, transform .2s ease;
   display:flex;flex-direction:column;
 }
-.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
-.card .media{aspect-ratio:4/5;background:var(--bg-soft);}
+.card:hover{border-color:var(--accent);transform:translateY(-3px);}
+.card .media{aspect-ratio:4/5;}
 .card .media img{width:100%;height:100%;object-fit:cover;}
-.card-body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1;}
-.card-body h3{margin:0;font-size:1.18rem;}
-.card-body p{margin:0;color:var(--muted);font-size:.95rem;}
-.card-meta{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;}
-.card-link{margin-top:auto;}
-
-/* blog kartı görsel oranı daha geniş */
+.card-body{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1;}
+.card-body h3{font-family:var(--font-sans);font-weight:400;margin:0;font-size:22px;letter-spacing:-.22px;color:var(--ink);line-height:1.2;}
+.card-body p{font-family:var(--font-sans);margin:0;color:var(--ink);font-size:14px;opacity:.82;}
+.card-meta{margin:0;}
 .card.post .media{aspect-ratio:3/2;}
 
-/* ---------- Buttons ---------- */
+/* ---------- Butonlar (outline pill) ---------- */
 .btn{
   display:inline-flex;align-items:center;gap:8px;
-  background:var(--accent);color:#fff;border:1px solid var(--accent);
-  padding:11px 20px;border-radius:999px;font-weight:600;font-size:.95rem;
-  transition:background .2s, transform .15s;cursor:pointer;
+  background:transparent;color:var(--accent);border:1px solid var(--accent);
+  padding:14px 24px;border-radius:var(--radius-pill);
+  font-size:14px;font-weight:400;letter-spacing:.04em;text-transform:uppercase;
+  transition:background .18s, color .18s;cursor:pointer;
 }
-.btn:hover{background:var(--accent-dark);color:#fff;transform:translateY(-1px);}
-.btn-ghost{background:transparent;color:var(--accent);}
-.btn-ghost:hover{background:var(--bg-soft);color:var(--accent-dark);}
+.btn:hover{background:var(--accent);color:var(--color-cream-paper);}
+.btn-ghost{color:var(--ink);border-color:var(--ink);}
+.btn-ghost:hover{background:var(--ink);color:var(--color-cream-paper);}
 
 /* ---------- Atölye ürün detay ---------- */
-.product{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:start;margin-bottom:70px;}
+.product{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;margin-bottom:96px;}
 .product:last-child{margin-bottom:0;}
-.product .media{border-radius:var(--radius);border:1px solid var(--line);aspect-ratio:4/5;}
+.product .media{border-radius:var(--radius-card);border:1px solid var(--line);aspect-ratio:4/5;}
 .product .media img{width:100%;height:100%;object-fit:cover;}
 .product .gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .product .gallery .media{aspect-ratio:1/1;}
-.product h2{margin:0 0 6px;font-size:1.6rem;}
-.product .dims{color:var(--accent);font-weight:600;font-size:.95rem;margin:0 0 16px;}
-.product .desc{color:var(--ink);}
-.product .desc strong{display:block;margin-top:14px;}
+.product h2{font-size:2.2rem;margin:0 0 10px;}
+.product .dims{font-family:var(--font-mono);color:var(--accent);font-size:13px;letter-spacing:.02em;margin:0 0 18px;}
+.product .desc{font-family:var(--font-sans);color:var(--ink);font-size:1.05rem;}
+.product .desc strong{font-family:var(--font-mono);font-weight:500;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);display:block;margin-top:16px;margin-bottom:4px;}
 
-/* ---------- Article (blog yazısı) ---------- */
-.article-hero .media{border-radius:var(--radius);aspect-ratio:3/2;margin:0 0 28px;border:1px solid var(--line);}
+/* ---------- Yazı (blog) ---------- */
+.article-hero .media{border-radius:var(--radius-card);aspect-ratio:3/2;margin:0 0 32px;border:1px solid var(--line);}
 .article-hero .media img{width:100%;height:100%;object-fit:cover;}
-.article h1{font-size:2.1rem;margin:0 0 6px;}
-.article .kicker{color:var(--accent);font-weight:600;letter-spacing:.04em;margin:0 0 26px;}
-.article p{margin:0 0 22px;}
-.back-link{display:inline-block;margin-bottom:26px;color:var(--muted);font-size:.9rem;}
+.article .kicker{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 12px;}
+.article h1{font-size:clamp(2.2rem,5vw,3rem);margin:0 0 28px;}
+.article p{font-family:var(--font-sans);font-size:1.18rem;line-height:1.6;margin:0 0 24px;}
+.back-link{display:inline-block;margin-bottom:28px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);}
 .back-link:hover{color:var(--accent);}
 
 /* ---------- Hakkımda ---------- */
-.about{display:grid;grid-template-columns:240px 1fr;gap:42px;align-items:start;}
-.about .photo{width:220px;}             /* küçük profil fotoğrafı */
-.about .photo .media{border-radius:18px;aspect-ratio:3/4;border:1px solid var(--line);}
+.about{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start;}
+.about .photo{width:220px;}
+.about .photo .media{border-radius:var(--radius-card);aspect-ratio:3/4;border:1px solid var(--ink);}
 .about .photo .media img{width:100%;height:100%;object-fit:cover;}
+.about p{font-family:var(--font-sans);font-size:1.18rem;line-height:1.6;}
 
 /* ---------- Kitabım ---------- */
-.book{display:grid;grid-template-columns:300px 1fr;gap:46px;align-items:start;}
+.book{display:grid;grid-template-columns:300px 1fr;gap:52px;align-items:start;}
 .book .cover .media{
-  aspect-ratio:2/3;border-radius:10px;border:1px solid var(--line);
-  background:var(--bg-soft);display:flex;align-items:center;justify-content:center;
+  aspect-ratio:2/3;border-radius:var(--radius-card);border:1px solid var(--ink);
+  background:var(--color-blush-card);display:flex;align-items:center;justify-content:center;
 }
-.book .cover .placeholder{color:var(--muted);font-size:.85rem;text-align:center;padding:20px;pointer-events:none;}
+.book .cover .placeholder{font-family:var(--font-mono);color:var(--ink);font-size:11px;letter-spacing:.04em;text-transform:uppercase;text-align:center;padding:20px;pointer-events:none;}
 .badge{
-  display:inline-block;background:var(--bg-soft);border:1px solid var(--line);
-  color:var(--muted);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
-  padding:5px 12px;border-radius:999px;font-weight:600;margin-bottom:16px;
+  display:inline-block;background:var(--color-blush-card);border:1px solid var(--accent);
+  color:var(--accent);font-size:11px;letter-spacing:.04em;text-transform:uppercase;
+  padding:5px 14px;border-radius:var(--radius-pill);font-weight:400;margin-bottom:18px;
 }
 
-/* ---------- Empty state ---------- */
+/* ---------- Boş durum ---------- */
 .empty{
-  text-align:center;padding:70px 24px;border:1px dashed var(--line);
-  border-radius:var(--radius);background:var(--bg-soft);color:var(--muted);
+  text-align:center;padding:80px 24px;border:1px solid var(--line);
+  border-radius:var(--radius-card);background:var(--color-blush-card);color:var(--ink);
 }
-.empty h3{color:var(--ink);margin:0 0 10px;}
+.empty h3{font-size:2rem;margin:0 0 12px;}
+.empty p{font-family:var(--font-sans);margin:0;opacity:.8;}
 
-/* ---------- Category chooser ---------- */
+/* ---------- Kategori seçici ---------- */
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .cat-card{
-  border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;
-  background:var(--bg);transition:transform .2s, box-shadow .2s;display:block;color:var(--ink);
+  border:1px solid var(--line);border-radius:var(--radius-card);padding:32px 28px;
+  background:transparent;transition:border-color .2s, transform .2s, background .2s;display:block;color:var(--ink);
 }
-.cat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);color:var(--ink);}
-.cat-card h3{margin:0 0 8px;font-size:1.25rem;}
-.cat-card p{margin:0;color:var(--muted);font-size:.95rem;}
-.cat-card .count{display:inline-block;margin-top:16px;color:var(--accent);font-weight:600;font-size:.9rem;}
+.cat-card:hover{border-color:var(--accent);transform:translateY(-3px);background:var(--color-blush-card);color:var(--ink);}
+.cat-card h3{margin:0 0 10px;font-size:1.7rem;}
+.cat-card p{font-family:var(--font-sans);margin:0;color:var(--ink);opacity:.82;font-size:1rem;}
+.cat-card .count{display:inline-block;margin-top:18px;color:var(--accent);font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
 
-/* ---------- Footer ---------- */
+/* ---------- Footer (maroon band) ---------- */
 .site-footer{
-  border-top:1px solid var(--line);background:var(--bg-soft);
-  padding:48px 0;margin-top:20px;
+  border-top:0;background:var(--color-wine-maroon);color:var(--color-cream-paper);
+  padding:52px 0;margin-top:0;
 }
 .footer-inner{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;}
+.site-footer .brand{color:var(--color-cream-paper);}
+.site-footer .brand span{color:var(--accent);}
 .socials{display:flex;gap:14px;list-style:none;margin:0;padding:0;}
 .socials a{
   display:inline-flex;align-items:center;justify-content:center;
-  width:42px;height:42px;border-radius:50%;border:1px solid var(--line);
-  background:var(--bg);color:var(--ink);transition:.2s;
+  width:44px;height:44px;border-radius:var(--radius-pill);border:1px solid rgba(254,240,230,.4);
+  background:transparent;color:var(--color-cream-paper);transition:.2s;
 }
 .socials a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
 .socials svg{width:20px;height:20px;}
-.footer-note{color:var(--muted);font-size:.88rem;}
+.footer-note{color:var(--color-soft-pink);font-size:11px;letter-spacing:.04em;text-transform:uppercase;margin:8px 0 0;}
 
 /* ---------- Responsive ---------- */
-@media (max-width:860px){
+@media (max-width:880px){
   .grid-3{grid-template-columns:repeat(2,1fr);}
   .cat-grid{grid-template-columns:1fr;}
-  .product{grid-template-columns:1fr;gap:22px;}
-  .about{grid-template-columns:1fr;gap:24px;}
+  .product{grid-template-columns:1fr;gap:24px;}
+  .about{grid-template-columns:1fr;gap:28px;}
   .about .photo{width:200px;}
-  .book{grid-template-columns:1fr;gap:26px;}
+  .book{grid-template-columns:1fr;gap:28px;}
   .book .cover{max-width:260px;}
 }
 @media (max-width:620px){
-  body{font-size:16px;}
-  .hero{padding:60px 0 46px;}
-  .hero h1{font-size:2rem;}
+  body{font-size:17px;}
+  .hero{padding:72px 0 56px;}
+  .hero--stage{padding:88px 0 76px;}
+  .section{padding:64px 0;}
   .grid-2,.grid-3{grid-template-columns:1fr;}
   .nav-links{
-    position:fixed;inset:64px 0 auto 0;flex-direction:column;gap:0;
-    background:var(--bg);border-bottom:1px solid var(--line);
+    position:fixed;inset:68px 0 auto 0;flex-direction:column;gap:0;
+    background:var(--color-cream-paper);border-bottom:1px solid var(--line);
     transform:translateY(-130%);transition:transform .28s ease;padding:8px 0;
   }
   .nav-links.open{transform:translateY(0);}
   .nav-links li{width:100%;}
-  .nav-links a{display:block;padding:14px 22px;border-bottom:1px solid var(--line);}
+  .nav-links a{display:block;padding:16px 24px;border-bottom:1px solid var(--line);}
   .nav-links a.active{border-bottom-color:var(--line);}
   .nav-toggle{display:block;}
   .footer-inner{flex-direction:column;text-align:center;}
