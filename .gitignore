@@ -9,6 +9,7 @@
 # korumasını destekler. Yol başındaki "/" eşleşmeyi köke sabitler, böylece
 # assets/img altındaki kopyalar etkilenmez.
 /profil foto.jpeg
+/Profil Foto.jpg
 /Bambu.jpg
 /Avangard.jpg
 /Avanagard.jpg
