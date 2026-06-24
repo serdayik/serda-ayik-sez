@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://serdayiksez.com/sitemap.xml
