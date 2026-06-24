@@ -270,27 +270,6 @@ img, .img-protect{
 .socials svg{width:20px;height:20px;}
 .footer-note{color:var(--color-soft-pink);font-size:11px;letter-spacing:.04em;text-transform:uppercase;margin:8px 0 0;}
 
-/* ---------- Çerez onay bandı ---------- */
-.cookie-bar{
-  position:fixed;left:0;right:0;bottom:0;z-index:100;
-  background:var(--color-wine-maroon);color:var(--color-cream-paper);
-  border-top:1px solid var(--accent);
-  display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;justify-content:center;
-  padding:16px 24px;
-}
-.cookie-bar p{margin:0;font-family:var(--font-sans);font-size:14px;line-height:1.5;max-width:760px;}
-.cookie-bar a{color:var(--accent);text-decoration:underline;}
-.cookie-actions{display:flex;gap:12px;flex-shrink:0;}
-.cookie-bar .c-btn{
-  font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;
-  padding:10px 18px;border-radius:var(--radius-pill);cursor:pointer;background:transparent;transition:.18s;
-}
-.cookie-bar .c-accept{border:1px solid var(--accent);color:var(--accent);}
-.cookie-bar .c-accept:hover{background:var(--accent);color:var(--color-cream-paper);}
-.cookie-bar .c-decline{border:1px solid rgba(254,240,230,.5);color:var(--color-cream-paper);}
-.cookie-bar .c-decline:hover{background:var(--color-cream-paper);color:var(--color-wine-maroon);}
-@media (max-width:620px){ .cookie-bar{flex-direction:column;text-align:center;padding:14px 18px;} }
-
 /* ---------- Yasal sayfa (gizlilik) ---------- */
 .legal h2{font-size:1.5rem;margin:40px 0 12px;}
 .legal h2:first-child{margin-top:0;}

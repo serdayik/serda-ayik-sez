@@ -90,52 +90,12 @@
 })();
 
 /* ===========================================================
-   Çerez onayı + Microsoft Clarity (yalnızca onaydan sonra yüklenir)
-   KVKK/GDPR: analiz çerezleri açık rıza ile çalışır.
+   Microsoft Clarity analitiği
+   (Gizlilik/çerez bilgilendirmesi footer'daki "Tüm hakları saklıdır"
+    bağlantısından erişilen /gizlilik sayfasında açıklanır.)
    =========================================================== */
-(function () {
-  "use strict";
-  var KEY = "cookie-consent-v1";
-
-  function loadClarity() {
-    if (window.__clarityLoaded) return;
-    window.__clarityLoaded = true;
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "xbzxdrfzdf");
-  }
-
-  var consent = null;
-  try { consent = localStorage.getItem(KEY); } catch (e) {}
-  if (consent === "accepted") { loadClarity(); return; }
-  if (consent === "declined") { return; }
-
-  function showBar() {
-    var bar = document.createElement("div");
-    bar.className = "cookie-bar";
-    bar.setAttribute("role", "dialog");
-    bar.setAttribute("aria-label", "Çerez bilgilendirmesi");
-    bar.innerHTML =
-      '<p>Bu sitede, ziyaretçi deneyimini anlamak için çerezler ve etkileşim/oturum kayıtları (Microsoft Clarity) kullanılabilir. ' +
-      'Ayrıntılar için <a href="/gizlilik">Gizlilik &amp; Çerez Politikası</a>.</p>' +
-      '<div class="cookie-actions">' +
-      '<button type="button" class="c-btn c-accept">Kabul Et</button>' +
-      '<button type="button" class="c-btn c-decline">Reddet</button>' +
-      '</div>';
-    function close() { if (bar.parentNode) bar.parentNode.removeChild(bar); }
-    document.body.appendChild(bar);
-    bar.querySelector(".c-accept").addEventListener("click", function () {
-      try { localStorage.setItem(KEY, "accepted"); } catch (e) {}
-      loadClarity(); close();
-    });
-    bar.querySelector(".c-decline").addEventListener("click", function () {
-      try { localStorage.setItem(KEY, "declined"); } catch (e) {}
-      close();
-    });
-  }
-
-  if (document.body) showBar();
-  else document.addEventListener("DOMContentLoaded", showBar);
-})();
+(function (c, l, a, r, i, t, y) {
+  c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+  t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+  y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+})(window, document, "clarity", "script", "xbzxdrfzdf");
