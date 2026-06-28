@@ -112,13 +112,14 @@ img, .img-protect{
 .hero--stage{
   background:var(--color-wine-maroon);color:var(--color-cream-paper);
   border-bottom:0;text-align:center;
-  padding:96px 0 80px;
-  /* Yazılar ve büyük "Serda" tek hücrede üst üste binerek ortalanır */
+  padding:72px 0 60px;
+  /* Yazılar ve çizgisel motif tek hücrede üst üste binerek ortalanır */
   display:grid;grid-template-columns:1fr;place-items:center;
 }
-.hero--stage > .container{grid-column:1;grid-row:1;z-index:2;position:relative;}
-.hero--stage h1{color:var(--color-cream-paper);}
+.hero--stage > .container{grid-column:1;grid-row:1;z-index:2;position:relative;padding:36px 0;}
+.hero--stage h1{color:var(--color-cream-paper);line-height:1.22;}
 .hero--stage .sub{color:var(--accent);}
+.hero--stage p.sub{margin:0 0 30px;}
 .hero--stage p{color:var(--color-soft-pink);}
 .hero-lines{
   grid-column:1;grid-row:1;z-index:1;
