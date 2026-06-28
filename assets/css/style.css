@@ -123,10 +123,10 @@ img, .img-protect{
 .hero--stage p{color:var(--color-soft-pink);}
 .hero-lines{
   grid-column:1;grid-row:1;z-index:1;
-  justify-self:stretch;align-self:center;
-  width:100%;height:auto;pointer-events:none;
+  justify-self:center;align-self:center;
+  width:min(500px,86vw);height:auto;pointer-events:none;
 }
-.hero-lines path{stroke:var(--accent);}
+.hero-lines path,.hero-lines line{stroke:var(--accent);fill:none;}
 
 /* ---------- Bölümler ---------- */
 .section{padding:96px 0;}
