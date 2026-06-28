@@ -23,6 +23,7 @@
   --font-serif:'Instrument Serif', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono:'DM Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --font-sans:'Manrope', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-signature:'Parisienne', 'Segoe Script', cursive;
 
   /* Yerleşim */
   --max:1200px;
@@ -85,8 +86,8 @@ img, .img-protect{
 }
 .nav{display:flex;align-items:center;justify-content:space-between;height:68px;}
 .brand{
-  font-family:var(--font-serif);font-weight:400;font-size:1.6rem;letter-spacing:-.01em;
-  color:var(--ink);line-height:1;
+  font-family:var(--font-signature);font-weight:400;font-size:1.8rem;letter-spacing:0;
+  color:var(--ink);line-height:1;white-space:nowrap;flex-shrink:0;
 }
 .brand span{color:var(--accent);}
 .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;}
