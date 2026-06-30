@@ -28,6 +28,11 @@
 /yazı masası dört.jpg
 /yazı masası beş.jpg
 
+# Taslaklar — _drafts/ içindeki yazılar yayına GİTMEZ (yerelde durur).
+# Sadece README izlenir; taslak .html ve görselleri yok sayılır.
+_drafts/*
+!_drafts/README.md
+
 # Sistem
 Thumbs.db
 .DS_Store
