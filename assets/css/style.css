@@ -211,6 +211,13 @@ img, .img-protect{
 .article .kicker{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 12px;}
 .article h1{font-size:clamp(2.2rem,5vw,3rem);margin:0 0 28px;}
 .article p{font-family:var(--font-sans);font-size:1.18rem;line-height:1.6;margin:0 0 24px;}
+.article .article-lead{font-style:italic;color:var(--accent);margin:0 0 36px;}
+.article h2.list-head{font-size:1.7rem;margin:44px 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+.article h2.list-head:first-of-type{margin-top:8px;}
+.article .book-list{list-style:none;margin:0 0 22px;padding:0;}
+.article .book-list li{font-family:var(--font-sans);font-size:1.02rem;line-height:1.5;margin:0 0 9px;padding-left:18px;position:relative;}
+.article .book-list li::before{content:"·";position:absolute;left:2px;color:var(--accent);font-weight:700;}
+.article .fav-note{font-size:1.02rem;margin:14px 0 8px;}
 .back-link{display:inline-block;margin-bottom:28px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);}
 .back-link:hover{color:var(--accent);}
 
